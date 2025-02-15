@@ -87,4 +87,11 @@ with engine.connect() as connection:
 
 # 4) Use Pandas to read and display a table
 df = pd.read_sql("SELECT * FROM publishers;", engine)
-print(df)
+df_2 = pd.read_sql("SELECT * FROM authors;", engine)
+df_3 = pd.read_sql("SELECT first_name,last_name FROM authors;",engine)
+df_4 = pd.read_sql("SELECT name FROM publishers;",engine)
+df_5 = pd.read_sql("SELECT first_name FROM authors,publishers;",engine)
+df_6 = pd.read_sql("SELECT first_name FROM authors;",engine)
+df_7 = pd.read_sql("SELECT author_id,first_name FROM authors WHERE middle_name IS NOT NULL;",engine)
+print(df_7)
+
